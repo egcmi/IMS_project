@@ -1,0 +1,13 @@
+Initial presentation of project idea – 7‘ on Oct. 25th(A) - Submit presentation until 24.10.
+ - What is the user story to be supported?
+
+Intermediate presentation – 10‘ on Nov. 29th(A) - Submit presentation until 28.11.
+ - Present wireframes for the user interaction
+ - Technology and system architecture
+ - Estimate of effort
+
+Final presentation – 20‘ on Jan. 11th - Submit presentation until 10.01.
+ - Present working/mockup system
+ - Reflect on development process and technology choice
+
+Final submission until Jan. 25th, 2018
