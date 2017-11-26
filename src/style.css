@@ -97,3 +97,10 @@
     margin-left: 30%;
   }
 }
+
+#copyright {
+  background-color: #99CB38;
+  color: white;
+  text-align: center;
+  clear: both;
+}
