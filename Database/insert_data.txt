@@ -1,0 +1,7 @@
+insert into events (name, date_time, location, description, price, photo, past_date) values ("Walk in the woods", "2013-10-10 18:15", "Ritten", "Come and join us in this amazing trip in the woods.", 5, "http://static.suedtirol.com/sasso-di-santa-croce.mtn.0002fa.jpg", 0);
+
+insert into events (name, date_time, location, description, price, photo, past_date) values ("Lorem", "2013-10-10 18:15", "Ritten", "Come and join us in this amazing trip in the woods.", 10, "http://static.suedtirol.com/sasso-di-santa-croce.mtn.0002fa.jpg", 0);
+
+insert into partecipants (id_event, full_name, phone_number, email_address) values (2, "Caio", "298148948", "ciccio@pasticcio.com");
+
+insert into articles (id_event, title, post, album) values (2, "Amazing day with the Llamas", "We spent the day with the llamas. They spit.", "http://static.suedtirol.com/sasso-di-santa-croce.mtn.0002fa.jpg;;;http://static.suedtirol.com/sasso-di-santa-croce.mtn.0002fa.jpg;;;http://static.suedtirol.com/sasso-di-santa-croce.mtn.0002fa.jpg");
