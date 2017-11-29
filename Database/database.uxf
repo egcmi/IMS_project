@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>13</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>328</x>
-      <y>200</y>
-      <w>168</w>
-      <h>136</h>
+      <x>624</x>
+      <y>143</y>
+      <w>273</w>
+      <h>221</h>
     </coordinates>
     <panel_attributes>_Participant_
 --
@@ -21,10 +21,10 @@ email_address Varchar(254)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>192</x>
-      <y>352</y>
-      <w>168</w>
-      <h>96</h>
+      <x>403</x>
+      <y>390</y>
+      <w>273</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>_Article_
 --
@@ -38,10 +38,10 @@ album Varchar(255)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>64</x>
-      <y>200</y>
-      <w>168</w>
-      <h>136</h>
+      <x>195</x>
+      <y>143</y>
+      <w>273</w>
+      <h>221</h>
     </coordinates>
     <panel_attributes>_Event_
 --
@@ -60,23 +60,23 @@ past_date Int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>224</x>
-      <y>200</y>
-      <w>120</w>
-      <h>32</h>
+      <x>455</x>
+      <y>143</y>
+      <w>195</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=1..*
+m1=0..*
 m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>128</x>
-      <y>328</y>
-      <w>80</w>
-      <h>88</h>
+      <x>299</x>
+      <y>351</y>
+      <w>130</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
