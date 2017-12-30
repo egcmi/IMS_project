@@ -1,17 +1,3 @@
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script type="text/javascript">
-    var toggle = function() {
-    var mydiv = document.getElementById('container');
-    if (mydiv.style.display === 'block' || mydiv.style.display === '')
-        mydiv.style.display = 'none';
-    else
-        mydiv.style.display = 'block';
-    }
-</script>
-</head>
-<body>
 <?php
 
 function create_post($title, $datetime, $location, $description, $price, $photo){
@@ -20,7 +6,7 @@ function create_post($title, $datetime, $location, $description, $price, $photo)
     echo "</div>";
     echo "<div class='col-sm-8 post1' >";
     echo "<div class='panel panel-default'>";
-    echo "<div class='panel-heading'><h5 class='post'> " . $title . "</h5> </div>";
+    echo "<div class='panel-heading'><h5 class=''> " . $title . "</h5> </div>";
     echo "<div class='col-sm-9'>";
     echo "<p class='post'>";
     echo $partial;
@@ -69,12 +55,11 @@ if ($conn->connect_error) {
 
 $sql = "SELECT name, date_time, location, description, price, photo FROM events WHERE past_date = 0;";
 $result = $conn->query($sql);
-
+$rows = array();
 while($row = $result->fetch_assoc()) {
-	create_post($row['name'], $row['date_time'], $row['location'], $row['description'], $row['price'], $row['photo']);
+    $rows[] = $row;
+	//create_post($row['name'], $row['date_time'], $row['location'], $row['description'], $row['price'], $row['photo']);
 }
-
+print json_encode($rows);
 $conn->close();
 ?>
-</body>
-</html>
