@@ -33,54 +33,35 @@
     </div>
 </nav>
 
-
 <div id="posts"></div>
+
 
 <div id="copyright">
   <p>
-            <small>&copy; 2017- All rights reserved</small>
+            <small>&copy; 2017 - All rights reserved</small>
   </p>
 </div>
 
 <div id="postTemplate" style="display: none">
-    <div class="col-md-4">
-      <div class="thumbnail1">
-          <img class ="post image" src="source" alt="title" style="width:100%">
-            <h5 class="caption">Lorem ipsum donec id elit non mi porta gravida at eget metus.</h5>
+  <div class="row">
+  <div class="col-sm-2">
+  </div>
+  <div class="col-sm-8 post1">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h5 class="post postTitle">Title</h5></div>
+      <div class="col-sm-9">
+        <p class="post postContent">Content</p>
       </div>
+      <div class="col-sm-3 post1 centercontainer"><img class="postImage" alt="Image of the described place." src="srcImage" width= "200px"></div>
+      <p class="centercontainer post"><button type="button" class="btn btn-success btnRead">Read more</button></p>
     </div>
+  </div>
+  <div class="col-sm-2">
+  </div>
+</div>  
 </div>
 
-
-
-<script>
-
-function getPhotos() {
-  if (window.XMLHttpRequest) {
-    xmlhttp = new XMLHttpRequest();
-  } else {
-    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  var result;
-  xmlhttp.open("GET", "php/load_photos.php", false);
-  xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-          result = this.responseText;
-      }
-  };
-  xmlhttp.send(null);
-  return result;
-}
-var jsonPhotos = JSON.parse(getPhotos());
-
-for (var i = 0; i < jsonPhotos.length; ++i) {
-  var postId = "post" + i;
-  $("#posts").append("<div id='" + postId + "'></div>");
-  var post = $("#"+postId);
-  $("#postTemplate").children().clone().appendTo(post);
-  $(post).find(".caption").text(jsonPhotos[i].name);
-  $(post).find(".image").attr('src', jsonPhotos[i].photo);
-}
+<script src="js/functions_gallery.js"></script>
 
 </script>
 </body>
