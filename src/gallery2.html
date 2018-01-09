@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gallery</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<nav class="header navbar navbar-default ">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button> 
+      <div class="navbar-header navbar-left pull-left">
+        <a href="home.html"><img src="images/logo.png" height="80px alt="Logo"></a>
+    </div>
+    <div class="visible-xs-block clearfix tex"></div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav ">
+        <li><a class="myitem" href="home.html">HOME</a></li>
+        <li><a class="myitem" href="about.html">ABOUT</a></li>
+        <li><a class="myitem" href="gallery.html">GALLERY</a></li>
+        <li><a class="myitem" href="contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+    </div>
+</nav>
+
+
+<div id="posts"></div>
+
+<div id="copyright">
+  <p>
+            <small>&copy; 2017- All rights reserved</small>
+  </p>
+</div>
+
+<div id="postTemplate" style="display: none">
+    <div class="col-md-4">
+      <div class="thumbnail1">
+          <img class ="post image" src="source" alt="title" style="width:100%">
+            <h5 class="caption">Lorem ipsum donec id elit non mi porta gravida at eget metus.</h5>
+      </div>
+    </div>
+</div>
+
+
+
+<script>
+
+function getPhotos() {
+  if (window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  var result;
+  xmlhttp.open("GET", "php/load_photos.php", false);
+  xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+          result = this.responseText;
+      }
+  };
+  xmlhttp.send(null);
+  return result;
+}
+var jsonPhotos = JSON.parse(getPhotos());
+
+for (var i = 0; i < jsonPhotos.length; ++i) {
+  var postId = "post" + i;
+  $("#posts").append("<div id='" + postId + "'></div>");
+  var post = $("#"+postId);
+  $("#postTemplate").children().clone().appendTo(post);
+  $(post).find(".caption").text(jsonPhotos[i].name);
+  $(post).find(".image").attr('src', jsonPhotos[i].photo);
+}
+
+</script>
+</body>
+</html>
