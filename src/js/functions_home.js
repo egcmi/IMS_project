@@ -29,6 +29,11 @@ for (var i = 0; i < jsonPosts.length; ++i) {
   $(post).find(".postContent").data("shortText", partial);
   $(post).find(".postContent").data("fullText", content);
   $(post).find(".postImage").attr("src",jsonPosts[i].photo);
+  var date_time = jsonPosts[i].date_time;
+  var time = date_time.substring(11,16);
+  var date = date_time.substring(8,10) + "/" + date_time.substring(5,7) + "/" + date_time.substring(0,4);
+  $(post).find(".location").text("Where? " + jsonPosts[i].location);
+  $(post).find(".date").text("When? " + date + " at " + time);
   $(post).find(".id").attr("value",jsonPosts[i].id_event);
 }
 
