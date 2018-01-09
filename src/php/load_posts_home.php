@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT id_event, name, date_time, location, description, price, photo FROM events WHERE past_date = 0;";
+$sql = "SELECT id_event, title, date_time, location, description, photo FROM events WHERE past_date = 0 ORDER BY date_time ASC;";
 $result = $conn->query($sql);
 $rows = array();
 while($row = $result->fetch_assoc()) {

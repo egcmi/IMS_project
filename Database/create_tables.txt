@@ -5,20 +5,20 @@ COLLATE utf8_general_ci;
 CREATE TABLE uniscout.events
 (
     id_event    INT PRIMARY KEY AUTO_INCREMENT,
-    name	VARCHAR(150) NOT NULL,
+    title	    VARCHAR(150) NOT NULL,
     date_time   DATETIME NOT NULL,
     location    VARCHAR(100) NOT NULL,
     description TEXT NOT NULL,
-    price       NUMERIC,
     photo       VARCHAR(255),
     past_date   INT CHECK (Past_date = 1 OR Past_date = 0)
 );
 
-CREATE TABLE uniscout.partecipants
+CREATE TABLE uniscout.participants
 (
     id_part     	INT PRIMARY KEY AUTO_INCREMENT,
     id_event    	INT NOT NULL,
-    full_name    	VARCHAR(50) NOT NULL,
+    name        	VARCHAR(50) NOT NULL,
+    surname         VARCHAR(50) NOT NULL,
     phone_number    VARCHAR(50) NOT NULL,
     email_address   VARCHAR(254) NOT NULL,
     FOREIGN KEY (id_event) REFERENCES events(id_event)
@@ -29,7 +29,14 @@ CREATE TABLE uniscout.articles
     id_article  INT PRIMARY KEY AUTO_INCREMENT,
     id_event    INT NOT NULL,
     title       VARCHAR(150) NOT NULL,
-    post        TEXT,
-    album       VARCHAR(255),
+    description TEXT,
     FOREIGN KEY (id_event) REFERENCES events(id_event)
+);
+
+CREATE TABLE uniscout.album
+(
+    id_image    INT PRIMARY KEY AUTO_INCREMENT,
+    id_event    INT NOT NULL,
+    photo       VARCHAR(255),
+    FOREIGN KEY (id_event) REFERENCES articles(id_event)
 );

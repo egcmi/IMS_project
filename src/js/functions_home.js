@@ -21,14 +21,15 @@ for (var i = 0; i < jsonPosts.length; ++i) {
   $("#posts").append("<div id='" + postId + "'></div>");
   var post = $("#"+postId);
   $("#postTemplate").children().clone().appendTo(post);
-  $(post).find(".postTitle").text(jsonPosts[i].name);
+  $(post).find(".postTitle").text(jsonPosts[i].title);
   var content = jsonPosts[i].description;
-  var partial = content.substring(0,12) + "...";
+  var partial = content.substring(0,250) + "...";
   $(post).find(".postContent").text(partial);
   $(post).data("id", jsonPosts[i].id_event);
   $(post).find(".postContent").data("shortText", partial);
   $(post).find(".postContent").data("fullText", content);
   $(post).find(".postImage").attr("src",jsonPosts[i].photo);
+  $(post).find(".id").attr("value",jsonPosts[i].id_event);
 }
 
 $(".btnRead").click(function(){

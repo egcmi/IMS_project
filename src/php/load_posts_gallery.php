@@ -12,12 +12,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT title, post, album FROM articles;";
+$sql = "SELECT id_event, title, description FROM articles;";
 $result = $conn->query($sql);
 $rows = array();
+$ims = array();
+$id = -1;
 while($row = $result->fetch_assoc()) {
-    $rows[] = $row;
+    $id = $row['id_event'];
+    $sqlim = "SELECT photo FROM album WHERE id_event = '" . $id . "';";
+    $resim = $conn->query($sqlim);
+    while ($im = $resim->fetch_assoc()) {
+		$ims[] = $im['photo'];
+	}
+	$row['photo'] = $ims;
+	$rows[] = $row;
 }
+
 print json_encode($rows);
 $conn->close();
 ?>

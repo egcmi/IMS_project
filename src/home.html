@@ -86,16 +86,17 @@
       </div>
       <div class="col-sm-3 post1 centercontainer"><img class="postImage" alt="Image of the described place." src="srcImage" width= "200px"></div>
       <div class="container" style="display:none">
-        <form id="new_form" class="formUser" action=""><br>
+        <form class="formUser" action=""><br>
           <label for="lastname">Last name:</label>
-          <input tooltip="Enter last name" value="text" id="lastname" class="form-control input-group-lg" type="text" name="lastname" placeholder="Last name required"/><br>
+          <input tooltip="Enter last name" value="text" class="form-control input-group-lg" type="text" name="lastname" placeholder="Last name required"/><br>
           <label for="firstname">First name:</label>
-          <input tooltip="Enter first name" value="text" id="firstname" class="form-control input-group-lg" type="text" name="firstname" placeholder="First name" required/><br>
+          <input tooltip="Enter first name" value="text" class="form-control input-group-lg" type="text" name="firstname" placeholder="First name" required/><br>
           <label for="email">Email:</label>
-          <input tooltip="Enter email" value="noreply@r.grouponmail.it" id="email" class="form-control input-group-lg" type="email" name="email" placeholder="Email address" required/><br>
+          <input tooltip="Enter email" value="noreply@r.grouponmail.it" class="form-control input-group-lg" type="email" name="email" placeholder="Email address" required/><br>
           <label for="tel">Telephone</label>
-          <input tooltip="Enter telephone number" value="0000000" id="tel" class="form-control input-group-lg" type="telephone" name="tel" placeholder=Telephone number" required/><br><br>";
-          <button type="submit" name="new_part" id="sub">Submit data</button>
+          <input tooltip="Enter telephone number" value="0000000" class="form-control input-group-lg" type="telephone" name="tel" placeholder="Telephone number" required/><br><br>
+          <input type="hidden" class="id" name="id" value="">
+          <button type="submit" name="new_part">Submit data</button>
         </form>
       </div>
       <p class="centercontainer post"><button type="button" class="btn btn-success btnRead">Read more</button></p>
