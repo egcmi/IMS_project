@@ -34,8 +34,7 @@ for (var i = 0; i < jsonPosts.length; ++i) {
 
 $(".btnRead").click(function(){
   var button = $(this);
-  var postContent = $(button).parent().siblings().children(".postContent");
-  var container = $(button).parent().siblings(".container");
+  var postContent = $(button).parent().siblings(".row").children(".postCont").children(".postContent");
   if($(button).html()=='Hide'){
     $(postContent).text($(postContent).data("shortText"));
     $(button).html("Read more");

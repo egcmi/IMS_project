@@ -51,9 +51,9 @@
 .post1{
   margin-top: 10px;
 }
-.lastrow{
-  margin-bottom: 115px;
-}
+.lastrow{ 
+  margin-bottom: 115px; 
+} 
 #copyright {
   background-color: #99CB38;
   color: white;
@@ -82,7 +82,7 @@
     vertical-align: top;
   }
   .carousel-inner > .item > img {	
-  	height: 500px;
+  	height: 75vh;
   }
   .nav{
   	margin-top: 1%;
@@ -93,7 +93,7 @@
 @media (max-width: 768px) {
 
   .carousel-inner > .item > img {	
-    height: 250px;
+    height: 35vh;
   }
   .thumbnail img {
     width: 100%;
