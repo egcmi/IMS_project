@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Gen 09, 2018 alle 18:41
+-- Creato il: Gen 10, 2018 alle 15:36
 -- Versione del server: 10.1.26-MariaDB
 -- Versione PHP: 7.1.9
 
@@ -75,19 +75,19 @@ CREATE TABLE `events` (
   `date_time` datetime NOT NULL,
   `location` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `photo` varchar(255) DEFAULT NULL,
-  `past_date` int(11) DEFAULT NULL
+  `photo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dump dei dati per la tabella `events`
 --
 
-INSERT INTO `events` (`id_event`, `title`, `date_time`, `location`, `description`, `photo`, `past_date`) VALUES
-(1, 'A walk along Talvera/Talfer', '2018-02-01 14:30:00', 'Bolzano/Bozen', 'Proin leo lorem, iaculis et neque eget, laoreet iaculis diam. Aenean aliquam non nisi id maximus. Maecenas viverra malesuada facilisis. Phasellus porta et tortor a dictum. Cras ut ornare leo. Fusce ultricies maximus condimentum. Phasellus semper ultricies erat nec suscipit. Vestibulum mattis mauris at urna rhoncus tristique. Ut laoreet aliquam lacus, eu pharetra nisl pretium ut.', 'https://goo.gl/5oBZYZ', 1),
-(2, 'We\'re visiting Ritten/Renon!', '2018-06-10 08:00:00', 'Ritten/Renon', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in est id enim luctus tempor. Duis ultricies, tortor sit amet aliquam malesuada, enim tortor rhoncus nulla, vel lacinia ex lorem a leo. Vivamus volutpat tempor eros in malesuada. Sed ultrices augue sit amet ipsum imperdiet porttitor. Fusce sapien lorem, viverra ut semper ut, pretium id ante. Ut ultricies orci nec molestie aliquet. Maecenas viverra eget orci in egestas. Donec quis sem in tortor egestas mattis pharetra vel lectus. Cras ac neque purus. Donec interdum tempus quam, a placerat ante semper at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed tempor eros urna, non faucibus est faucibus ut.', 'https://goo.gl/BRdqhS', 0),
-(3, 'Your first trip to Jenesien/San Genesio', '2018-05-15 10:00:00', 'Jenesien/San Genesio', 'Nam eget consectetur turpis, sed cursus lectus. Phasellus pulvinar tristique orci ultricies elementum. Vivamus iaculis nec tellus id suscipit. Vestibulum dapibus sed elit et facilisis. Suspendisse nibh augue, hendrerit vel condimentum vitae, maximus at arcu. Suspendisse rhoncus purus at lacus ullamcorper mattis. Quisque imperdiet lacinia ligula nec scelerisque. Integer ac felis elit. Donec feugiat felis nisi, nec maximus enim tincidunt a. Donec finibus et tellus nec volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla quis aliquet augue, non tempor mauris.', 'https://goo.gl/DNXwKr', 0),
-(4, 'Barbecue at Colle/Kohlern', '2018-07-08 12:30:00', 'Colle/Kohlern', 'Quisque ex eros, dictum sit amet nunc et, tristique rutrum turpis. Phasellus commodo, arcu in tempor egestas, sapien nisi sodales mauris, eget ullamcorper magna eros vitae justo. Donec vel nisi in nisl tristique dictum. Mauris ut tempor dolor, in mattis turpis. Sed eget sagittis metus. Aenean cursus dignissim velit, posuere commodo est vehicula eu. Suspendisse nunc lectus, blandit placerat ligula sed, mattis bibendum felis. Vivamus vel porta ligula, id porta metus. Curabitur sit amet mattis lorem. Nam ut ultrices ipsum, eget tempor erat.', 'https://goo.gl/9xUyHU', 0);
+INSERT INTO `events` (`id_event`, `title`, `date_time`, `location`, `description`, `photo`) VALUES
+(1, 'A walk along Talvera/Talfer', '2018-01-08 14:30:00', 'Bolzano/Bozen', 'Proin leo lorem, iaculis et neque eget, laoreet iaculis diam. Aenean aliquam non nisi id maximus. Maecenas viverra malesuada facilisis. Phasellus porta et tortor a dictum. Cras ut ornare leo. Fusce ultricies maximus condimentum. Phasellus semper ultricies erat nec suscipit. Vestibulum mattis mauris at urna rhoncus tristique. Ut laoreet aliquam lacus, eu pharetra nisl pretium ut.', 'https://goo.gl/5oBZYZ'),
+(2, 'We\'re visiting Ritten/Renon!', '2018-06-10 08:00:00', 'Ritten/Renon', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in est id enim luctus tempor. Duis ultricies, tortor sit amet aliquam malesuada, enim tortor rhoncus nulla, vel lacinia ex lorem a leo. Vivamus volutpat tempor eros in malesuada. Sed ultrices augue sit amet ipsum imperdiet porttitor. Fusce sapien lorem, viverra ut semper ut, pretium id ante. Ut ultricies orci nec molestie aliquet. Maecenas viverra eget orci in egestas. Donec quis sem in tortor egestas mattis pharetra vel lectus. Cras ac neque purus. Donec interdum tempus quam, a placerat ante semper at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed tempor eros urna, non faucibus est faucibus ut.', 'https://goo.gl/BRdqhS'),
+(3, 'Your first trip to Jenesien/San Genesio', '2018-05-15 10:00:00', 'Jenesien/San Genesio', 'Nam eget consectetur turpis, sed cursus lectus. Phasellus pulvinar tristique orci ultricies elementum. Vivamus iaculis nec tellus id suscipit. Vestibulum dapibus sed elit et facilisis. Suspendisse nibh augue, hendrerit vel condimentum vitae, maximus at arcu. Suspendisse rhoncus purus at lacus ullamcorper mattis. Quisque imperdiet lacinia ligula nec scelerisque. Integer ac felis elit. Donec feugiat felis nisi, nec maximus enim tincidunt a. Donec finibus et tellus nec volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla quis aliquet augue, non tempor mauris.', 'https://goo.gl/DNXwKr'),
+(4, 'Barbecue at Colle/Kohlern', '2018-07-08 12:30:00', 'Colle/Kohlern', 'Quisque ex eros, dictum sit amet nunc et, tristique rutrum turpis. Phasellus commodo, arcu in tempor egestas, sapien nisi sodales mauris, eget ullamcorper magna eros vitae justo. Donec vel nisi in nisl tristique dictum. Mauris ut tempor dolor, in mattis turpis. Sed eget sagittis metus. Aenean cursus dignissim velit, posuere commodo est vehicula eu. Suspendisse nunc lectus, blandit placerat ligula sed, mattis bibendum felis. Vivamus vel porta ligula, id porta metus. Curabitur sit amet mattis lorem. Nam ut ultrices ipsum, eget tempor erat.', 'https://goo.gl/9xUyHU');
+
 -- --------------------------------------------------------
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `participants` (
   `name` varchar(50) NOT NULL,
   `surname` varchar(50) NOT NULL,
   `phone_number` varchar(50) NOT NULL,
-  `email_address` varchar(254) NOT NULL,
+  `email_address` varchar(254) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -139,7 +139,7 @@ ALTER TABLE `events`
 --
 ALTER TABLE `participants`
   ADD PRIMARY KEY (`id_part`),
-  ADD KEY `id_event` (`id_event`);
+  ADD UNIQUE KEY `id_event` (`id_event`,`email_address`);
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
@@ -155,19 +155,19 @@ ALTER TABLE `album`
 -- AUTO_INCREMENT per la tabella `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_article` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT per la tabella `events`
 --
 ALTER TABLE `events`
-  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT per la tabella `participants`
 --
 ALTER TABLE `participants`
-  MODIFY `id_part` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_part` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Limiti per le tabelle scaricate
