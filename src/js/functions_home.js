@@ -40,7 +40,7 @@ for (var i = 0; i < jsonPosts.length; ++i) {
 $(".btnRead").click(function(){
   var button = $(this);
   var postContent = $(button).parent().siblings().children(".postContent");
-  var container = $(button).parent().siblings(".container");
+  var container = $(button).parent().siblings(".row").children(".container");
   $(container).toggle(); 
   if($(container).css('display')=='none'){
     $(postContent).text($(postContent).data("shortText"));
