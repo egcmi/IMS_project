@@ -4,10 +4,9 @@
 }
 .navbar .navbar-nav {
 	color: black;
-	font: bold 18px georgia;
-  display: inline-block;
+	font: bold 17px georgia;
   float: none;
-  vertical-align: top;
+  vertical-align: center;
 }
 .carousel-inner > .item > img {	
   margin: auto;
@@ -96,7 +95,7 @@
   }
   .nav{
   	margin-top: 1%;
-    	margin-left: 50%;
+    margin-left: 50%;
   }
 }
 

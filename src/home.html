@@ -12,46 +12,45 @@
 </head>
 <body>
 <nav class="header navbar navbar-default ">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button> 
-      <div class="navbar-header navbar-left pull-left">
-        <a href="home.html"><img src="images/logo.png" height="80px alt="Logo"></a>
-    </div>
-    <div class="visible-xs-block clearfix tex"></div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav ">
-        <li><a class="myitem" href="home.html">HOME</a></li>
-        <li><a class="myitem" href="about.html">ABOUT</a></li>
-        <li><a class="myitem" href="gallery.html">GALLERY</a></li>
-        <li><a class="myitem" href="contact.html">CONTACT</a></li>
-      </ul>
-    </div>
-    </div>
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  	<span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span> 
+  </button> 
+  <div class="navbar-header navbar-left pull-left">
+  	<a href="home.html"><img src="images/logo.png" height="60" alt="Logo"></a>
+  </div>
+  <div class="visible-xs-block clearfix tex"></div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+  	<ul class="nav navbar-nav ">
+      <li><a class="myitem" href="home.html">HOME</a></li>
+      <li><a class="myitem" href="about.html">ABOUT</a></li>
+      <li><a class="myitem" href="past_events.html">PAST EVENTS</a></li>
+      <li><a class="myitem" href="gallery.html">GALLERY</a></li>
+      <li><a class="myitem" href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div id="myCarousel" class="carousel slide " data-ride="carousel" >
-  <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-    <img src="images/slide1.jpg"  >
-    </div>
-    <div class="item">
-      <img src="images/slide2.jpg"  >
-    </div>
-    <div class="item">
-       <img src="images/slide3.jpg"  >
-    </div>
-  </div>
+	  <!-- Wrapper for slides -->
+	<div class="carousel-inner" role="listbox">
+	  <div class="item active">
+		  <img src="images/slide1.jpg">
+		</div>
+		<div class="item">
+			<img src="images/slide2.jpg">
+		</div>
+		<div class="item">
+		  <img src="images/slide3.jpg">
+	  </div>
+	</div>
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -64,57 +63,53 @@
   </a>
 </div>
 
-
 <div id="posts"></div>
-
 
 <div id="copyright">
   <p>
-            <small>&copy; 2017 - All rights reserved</small>
+		<small>&copy; 2018 - All rights reserved</small>
   </p>
 </div>
 
 <div id="postTemplate" style="display: none">
   <div class="row no-gutters" style=" width:100% ">
-  <div class="col-xs-1 col-sm-2 "> &nbsp;
-  </div>
-  <div class="col-xs-10 col-sm-8  post1">
-    <div class="panel panel-default">
-      <div class="panel-heading"><h5 class="post postTitle">Title</h5></div>
-      <div class="col-sm-9 postInfo">
-        <div class="date">when</div>
-        <div class="location">where</div>
-        <p class="post postContent">Content</p>
-      </div>
-      <div class="col-sm-3 post1 centercontainer"><img class="postImage" alt="Image of the described place." src="srcImage" width= "100%"></div>
-      <div class="row">
-      	<div class="container " style="display:none">
-      		<div clas="col-sm-2"></div>
-      		<div class="col-sm-7">
-            <form class="formUser" action=""><br>
-          	  <label for="lastname">Last name:</label>
-	          <input tooltip="Enter last name" value="text" class="form-control input-group-lg" type="text" name="lastname" placeholder="Last name required"/><br>
-	          <label for="firstname">First name:</label>
-	          <input tooltip="Enter first name" value="text" class="form-control input-group-lg" type="text" name="firstname" placeholder="First name" required/><br>
-	          <label for="email">Email:</label>
-	          <input tooltip="Enter email" value="baldinigiuls@gmail.com" class="form-control input-group-lg" type="email" name="email" placeholder="Email address" required/><br>
-	          <label for="tel">Telephone</label>
-	          <input tooltip="Enter telephone number" value="0000000" class="form-control input-group-lg" type="telephone" name="tel" placeholder="Telephone number" required/><br><br>
-	          <input type="hidden" class="id" name="id" value="">
-	          <button type="submit" name="new_part">Submit data</button>
-	        </form>
-	    </div>
-	    <div clas="col-sm-3"></div>
-	      </div>
-	  </div>
-      <p class="centercontainer post">
-      	<button type="button" class="btn btn-success btnRead">Read more</button>
-      </p>
-    </div>
-  </div>
-  <div class="col-xs-1 col-sm-2 ">
-  </div>
-</div>  
+  	<div class="col-xs-1 col-sm-2 "> &nbsp;</div>
+  	<div class="col-xs-10 col-sm-8  post1">
+    	<div class="panel panel-default">
+      	<div class="panel-heading"><h5 class="post postTitle">Title</h5></div>
+      	<div class="col-sm-9 postInfo">
+        	<div class="date">when</div>
+        	<div class="location">where</div>
+        	<p class="post postContent">Content</p>
+      	</div>
+      	<div class="col-sm-3 post1 centercontainer"><img class="postImage" alt="Image of the described place." src="srcImage" width= "100%"></div>
+      	<div class="row">
+      		<div class="container " style="display:none">
+      			<div clas="col-sm-2"></div>
+      			<div class="col-sm-7">
+            	<form class="formUser" action=""><br>
+          	  	<label for="lastname">Last name:</label>
+		          	<input tooltip="Enter last name" value="text" class="form-control input-group-lg" type="text" name="lastname" placeholder="Last name required"/><br>
+		          	<label for="firstname">First name:</label>
+		          	<input tooltip="Enter first name" value="text" class="form-control input-group-lg" type="text" name="firstname" placeholder="First name" required/><br>
+		          	<label for="email">Email:</label>
+		          	<input tooltip="Enter email" value="baldinigiuls@gmail.com" class="form-control input-group-lg" type="email" name="email" placeholder="Email address" required/><br>
+		          	<label for="tel">Telephone</label>
+		          	<input tooltip="Enter telephone number" value="0000000" class="form-control input-group-lg" type="telephone" name="tel" placeholder="Telephone number" required/><br><br>
+		          	<input type="hidden" class="id" name="id" value="">
+		          	<button type="submit" name="new_part">Submit data</button>
+	        		</form>
+	    			</div>
+	    			<div clas="col-sm-3"></div>
+	      	</div>
+	  		</div>
+      	<p class="centercontainer post">
+      		<button type="button" class="btn btn-success btnRead">Read more</button>
+      	</p>
+    	</div>
+  	</div>
+  	<div class="col-xs-1 col-sm-2 "></div>
+	</div>  
 </div>
 
 <script src="js/functions_home.js"></script>

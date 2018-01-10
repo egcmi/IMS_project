@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Past Events</title>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+<nav class="header navbar navbar-default ">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span> 
+  </button> 
+  <div class="navbar-header navbar-left pull-left">
+    <a href="home.html"><img src="images/logo.png" height="60" alt="Logo"></a>
+  </div>
+  <div class="visible-xs-block clearfix tex"></div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav ">
+      <li><a class="myitem" href="home.html">HOME</a></li>
+      <li><a class="myitem" href="about.html">ABOUT</a></li>
+      <li><a class="myitem" href="past_events.html">PAST EVENTS</a></li>
+      <li><a class="myitem" href="gallery.html">GALLERY</a></li>
+      <li><a class="myitem" href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div id="posts"></div>
+
+<div id="copyright">
+  <p>
+    <small>&copy; 2018 - All rights reserved</small>
+  </p>
+</div>
+
+<div id="postTemplate" style="display: none">
+  <div class="row no-gutters" style=" width:100%">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8 post1">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h5 class="post postTitle">Title</h5></div>
+        <div id="locImages"></div>
+        <div class="row">
+          <div class="col-sm-9 postCont">
+            <p class="post postContent">Content</p>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+        <p class="centercontainer post">
+          <button type="button" class="btn btn-success btnRead">Read more</button>
+        </p>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>  
+</div>
+
+<script src="js/functions_past_events.js"></script>
+</body>
+</html>
