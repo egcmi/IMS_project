@@ -115,7 +115,7 @@ body {
     vertical-align: top;
   }
   .carousel-inner > .item > img {	
-  	height: 75vh;
+  	height: 65vh;
   }
   .nav{
   	margin-top: 1%;
@@ -129,7 +129,7 @@ body {
   }
 
   .carousel-inner > .item > img {	
-    height: 35vh;
+    height: 30vh;
   }
   .thumbnail img {
     width: 100%;
