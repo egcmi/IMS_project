@@ -27,14 +27,19 @@ for (var i = 0; i < jsonPosts.length; ++i) {
   $(post).find(".postContent").text(partial);
   $(post).find(".postContent").data("shortText", partial);
   $(post).find(".postContent").data("fullText", content);
-  for (var j = 0; j < 3; ++j) {
-    $("#locImages").append("<img class='postImage' alt='Image of the described place.' src='" + jsonPosts[i].photo[j] + "' width='200px'>");
+  for (var j = 0; j < jsonPosts[i].photo.length; j++) {
+
+    var photoId = "photo" + j;
+    $("#locImages").append("<div id='" + photoId + "'></div>");
+    var photo = $("#"+photoId);
+    $("#postTemplate1").children().clone().appendTo(photo);
+    $(photo).find(".image").attr('src', jsonPosts[i].photo[j]);
   }
 }
 
 $(".btnRead").click(function(){
   var button = $(this);
-  var postContent = $(button).parent().siblings(".row").children(".postCont").children(".postContent");
+  var postContent = $(button).parent().parent().siblings(".row").children(".postCont").children(".postContent");
   if($(button).html()=='Hide'){
     $(postContent).text($(postContent).data("shortText"));
     $(button).html("Read more");
