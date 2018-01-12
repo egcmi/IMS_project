@@ -147,7 +147,7 @@ function send_email($email, $name, $surname, $id_event){
 		<table style='font-family: helvetica, sans serif; width: 100%'>
 		<thead>
 		<tr>
-		<th colspan='3' style='background-color: #99CB38'><img src='https://image.ibb.co/mP0t1m/logo.png' height='100%' alt='UniScout logo'>
+		<th colspan='3' style='background-color: #99CB38'><img src='https://imgur.com/htYlt9D' height='100%' alt='UniScout logo'>
 		</th>
 		</tr>
 		</thead>
