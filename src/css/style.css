@@ -86,7 +86,7 @@ body {
     padding-right: 0;
     padding-left: 0;
   }
-  }
+}
 #copyright {
   background-color: #99CB38;
   color: white;
@@ -120,10 +120,14 @@ body {
   }
   .nav{
   	margin-top: 1%;
-    margin-left: 50%;
+    margin-left: 55vw;
   }
 }
-
+@media (min-width: 768px) and (max-width: 1360px) {
+   .collapse {
+       display: none !important;
+   }
+}
 @media (max-width: 768px) {
   .col-sm-2 .col-sm-1 .col-sm-3 .col-sm-8 .col-sm-9 .col-sm-10{
   text-align: center;
