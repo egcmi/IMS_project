@@ -23,6 +23,7 @@ for (var i = 0; i < jsonPhotos.length; ++i) {
   $("#postTemplate").children().clone().appendTo(post);
   $(post).find(".caption").text(jsonPhotos[i].title);
   $(post).find(".image-link").attr('href', jsonPhotos[i].photo);
+  $(post).find(".image-link").attr('data-lightbox', 'trips');
   $(post).find(".image-link").attr('data-title', jsonPhotos[i].title);
   $(post).find(".image").attr('src', jsonPhotos[i].photo);
 }
