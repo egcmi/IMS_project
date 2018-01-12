@@ -51,20 +51,22 @@
           <p><span class="glyphicon glyphicon-envelope"></span> uniscoutbz@gmail.com</p> 
         </div>
         <div class="col-sm-7">
-          <div class="row">
-            <div class="col-sm-6 form-group">
-              <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          <form class="formContact" action=""><br>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+              </div>
+              <div class="col-sm-6 form-group">
+                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+              </div>
             </div>
-            <div class="col-sm-6 form-group">
-              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-            </div>
-          </div>
-          <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-          <div class="row">
-            <div class="col-sm-12 form-group">
-              <button class="btn btn-default pull-right" type="submit" id="sendbutton">Send</button>
-            </div>
-          </div> 
+            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+            <div class="row">
+              <div class="col-sm-12 form-group">
+                <button class="btn btn-default pull-right" type="submit" id="sendbutton">Send</button>
+              </div>
+            </div> 
+          </form>
         </div>
       </div>
     </div>
@@ -89,5 +91,6 @@
   }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcW1bSDHg1mddPxaYo3xca_e6R4efo6wU&callback=myMap"></script>
+<script src="js/functions_contact_email.js"></script>
 </body>
 </html>
