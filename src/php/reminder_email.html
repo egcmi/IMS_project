@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Message from UniScout</title>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+	<table style='font-family: helvetica, sans serif; width: 100%'>
+		<thead>
+			<tr>
+				<th colspan='3' style='background-color: #99CB38'><img src='https://i.imgur.com/htYlt9D.png' height='30%' alt='UniScout logo'>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td style='width: 20%'/>
+				<td>
+					<h1 align='center'>Hi <b>{$name} {$surname}</b>!</h1>
+					<p align='center'>
+						This is a reminder that <b>{$title}</b> is coming up tomorrow, so get prepared!<br> 
+						We will meet <b>tomorrow, {$nice_date}, at {$time} at the University Square in Bolzano</b> to go to {$location}.<br>
+						<b>Please be punctual so we can start on time.</b><br>
+					</p>
+					
+					<h2 align='center'>Here's some more info:</h2>
+
+					<p><i>{$description}</i></p>
+					<h3>
+						Remember to pack some snacks and water, wear comfortable clothes with sporty shoes and dress appropriately for the weather in {$location}. 
+					</h3>
+					<p align='center'><img src='{$photo}' alt='{$title}' width='90%'></p>
+					<p>
+						You are receiving this because you expressed interest in some event at our website UniScout. We might use the email address and/or phone number that you provided us to get in touch with you prior to the event.<br>
+						If you have any questions, feel free to contact us via <a href='http://localhost/uniscout/contact.html'>our contact form</a> or by replying to this email.<br>
+						<br>
+						Cheers!<br>
+						<i>Your UniScout Team</i>
+					</p>
+				</td>
+				<td style='width: 20%'/>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+
+Hi {$name} {$surname}! This is a reminder that {$title} is coming up tomorrow, so get prepared! We will meet tomorrow, {$nice_date}, at {$time} at the University Square in Bolzano to go to {$location}. Please be punctual so we can start on time. Here's some more info: {$description} Remember to pack some snacks and water, wear comfortable clothes with sporty shoes and dress appropriately for the weather in {$location}. You are receiving this because you expressed interest in some event at our website UniScout. We might use the email address and/or phone number that you provided us to get in touch with you prior to the event. If you have any questions, feel free to contact us via our contact form or by replying to this email. Cheers! Your UniScout Team

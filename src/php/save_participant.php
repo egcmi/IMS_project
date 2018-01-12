@@ -147,7 +147,7 @@ function send_email($email, $name, $surname, $id_event){
 		<table style='font-family: helvetica, sans serif; width: 100%'>
 		<thead>
 		<tr>
-		<th colspan='3' style='background-color: #99CB38'><img src='https://imgur.com/htYlt9D' height='100%' alt='UniScout logo'>
+		<th colspan='3' style='background-color: #99CB38'><img src='https://i.imgur.com/htYlt9D.png' height='30%' alt='UniScout logo'>
 		</th>
 		</tr>
 		</thead>
@@ -161,11 +161,11 @@ function send_email($email, $name, $surname, $id_event){
 		<br> 
 		We plan to meet <b>on {$nice_date} at {$time} at the University Square in Bolzano</b> to go to {$location}.<br></p>
 		<h2 align='center'>Here's some more info:</h2>
-		<p><i>{$description}</font></i></p>
+		<p><i>{$description}</i></p>
 		<p align='center'><img src='{$photo}' alt='{$title}' width='90%'></p>
 		<p>
 		You are receiving this because you expressed interest in some event at our website UniScout. We might use the email address and/or phone number that you provided us to notify of updates or get in touch with you prior to the event.<br>
-		If you have any questions, feel free to contact us via <a href='http://localhost/uniscout/src/contact.html'>our contact form</a> or by replying to this email.<br>
+		If you have any questions, feel free to contact us via <a href='http://localhost/uniscout/contact.html'>our contact form</a> or by replying to this email.<br>
 		<br>
 		Cheers!<br>
 		<i>Your UniScout Team</i>
