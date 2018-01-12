@@ -197,6 +197,19 @@ if(isset($_REQUEST)){
 	$surname=$_POST['lastname'];
 	$phone_number=$_POST['tel'];
 	$email_address=$_POST['email'];
+	$captcha=$_POST['g-recaptcha-response'];
+        
+    if(!$captcha){
+      echo 'Please check the the captcha form.';
+      exit;
+    }
+	$secretKey = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
+	$ip = $_SERVER['REMOTE_ADDR'];
+        $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+	$responseKeys = json_decode($response,true);
+        if(intval($responseKeys["success"]) !== 1) {
+          echo 'You are spammer ! Get the @$%K out';
+        }
 	$sql="INSERT INTO participants(id_event, name, surname, phone_number, email_address) VALUES ('$id_event', '$name', '$surname', '$phone_number' ,'$email_address');";
 
 	$result = $conn->query($sql);

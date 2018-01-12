@@ -4,7 +4,7 @@ set_include_path('../libs');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-
+require_once "recaptchalib.php";
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
@@ -49,6 +49,21 @@ if(isset($_REQUEST)){
 	$name=$_POST['name'];
 	$email=$_POST['email'];
 	$comment=$_POST['comments'];
+    $captcha=$_POST['g-recaptcha-response'];
+        
+    if(!$captcha){
+      echo 'Please check the the captcha form.';
+      exit;
+    }
+	$secretKey = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
+	$ip = $_SERVER['REMOTE_ADDR'];
+        $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+	$responseKeys = json_decode($response,true);
+        if(intval($responseKeys["success"]) !== 1) {
+          echo '<You are spammer ! Get the @$%K out';
+        } else {
+          echo 'Thanks for posting comment.';
+        }
 
 	$bodyhtml = "
 	Hi {$name}!<br>
