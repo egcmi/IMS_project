@@ -84,29 +84,29 @@
 <div id="postTemplate" style="display: none">
   <div class="row no-gutters" style=" width:100% ">
   	<div class="col-xs-1 col-sm-2 "> &nbsp;</div>
-  	<div class="col-xs-10 col-sm-8  post1">
+  	<div class="col-xs-10 col-sm-8  posthome">
     	<div class="panel panel-default">
-      	<div class="panel-heading"><h5 class="post postTitle">Title</h5></div>
+      	<div class="panel-heading"><h5 class="postTitle">Title</h5></div>
       	<div class="col-sm-9 postInfo">
         	<div class="date">when</div>
         	<div class="location">where</div>
-        	<p class="post postContent">Content</p>
+        	<p class="posthome postContent">Content</p>
       	</div>
-      	<div class="col-sm-3 post1 centercontainer"><img class="postImage" alt="Image of the described place." src="" width= "100%"></div>
+      	<div class="col-sm-3 centercontainer"><img class="postImage posthome" alt="Image of the described place." src="" width= "100%"></div>
       	<div class="row">
       		<div class="container " style="display:none">
       			<div clas="col-sm-2"></div>
       			<div class="col-sm-7">
             	<form class="formUser" action=""><br>
                 <label >Enter your data and submit in order to participate</label><br>
+                <label for="firstname">First name:</label>
+                <input tooltip="Enter first name" class="form-control input-group-lg" type="text" name="firstname" placeholder="First name" required/><br>
           	  	<label for="lastname">Last name:</label>
-		          	<input tooltip="Enter last name" value="text" class="form-control input-group-lg" type="text" name="lastname" placeholder="Last name required"/><br>
-		          	<label for="firstname">First name:</label>
-		          	<input tooltip="Enter first name" value="text" class="form-control input-group-lg" type="text" name="firstname" placeholder="First name" required/><br>
+		          	<input tooltip="Enter last name" class="form-control input-group-lg" type="text" name="lastname" placeholder="Last name " required/><br>
 		          	<label for="email">Email:</label>
-		          	<input tooltip="Enter email" value="baldinigiuls@gmail.com" class="form-control input-group-lg" type="email" name="email" placeholder="Email address" required/><br>
+		          	<input tooltip="Enter email" class="form-control input-group-lg" type="email" name="email" placeholder="Email address" required/><br>
 		          	<label for="tel">Telephone</label>
-		          	<input tooltip="Enter telephone number" value="0000000" class="form-control input-group-lg" type="telephone" name="tel" placeholder="Telephone number" required/><br>
+		          	<input tooltip="Enter telephone number" class="form-control input-group-lg" type="telephone" name="tel" placeholder="Telephone number" required/><br>
 		          	<input type="hidden" class="id" name="id" value="">
 		          	<div class="g-recaptcha" id="cap" data-sitekey="6LfofkAUAAAAAH4G31ywKJTPUdK1B4aOghUOyyAR"></div><br><br>
 		          	<button type="submit" class="btn btn-primary" name="new_part">Submit data</button><br><br>
@@ -115,7 +115,7 @@
 	    			<div clas="col-sm-3"></div>
 	      	</div>
 	  		</div>
-      	<p class="centercontainer post">
+      	<p class="centercontainer posthome">
       		<button type="button" class="btn btn-success btnRead">Read more</button>
       	</p>
     	</div>

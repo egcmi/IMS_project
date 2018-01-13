@@ -207,9 +207,9 @@ if(isset($_REQUEST)){
 	$ip = $_SERVER['REMOTE_ADDR'];
     $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
 	$responseKeys = json_decode($response,true);
-        if(intval($responseKeys["success"]) !== 1) {
-          echo 'You are spammer !';
-        }
+    if(intval($responseKeys["success"]) !== 1) {
+      echo 'You are spammer! ';
+    }
 	$sql="INSERT INTO participants(id_event, name, surname, phone_number, email_address) VALUES ('$id_event', '$name', '$surname', '$phone_number' ,'$email_address');";
 
 	$result = $conn->query($sql);

@@ -6,6 +6,8 @@ $(".formUser").submit(function(){
         url: "php/save_participant.php",
         success: function(data){
             alert("User insertion process: " + data);
+            $(".formUser")[0].reset();
+            grecaptcha.reset(); 
         }
 	});
 	return false;
