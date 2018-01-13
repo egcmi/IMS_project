@@ -60,9 +60,7 @@ if(isset($_REQUEST)){
         $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
 	$responseKeys = json_decode($response,true);
         if(intval($responseKeys["success"]) !== 1) {
-          echo '<You are spammer ! Get the @$%K out';
-        } else {
-          echo 'Thanks for posting comment.';
+          echo '<You are spammer ! ';
         }
 
 	$bodyhtml = "
