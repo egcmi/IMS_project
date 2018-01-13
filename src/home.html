@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Home</title>
+  <link rel="stylesheet" href="libs/lightbox/dist/css/lightbox.min.css">
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -92,7 +93,11 @@
         	<div class="location">where</div>
         	<p class="posthome postContent">Content</p>
       	</div>
-      	<div class="col-sm-3 centercontainer"><img class="postImage posthome" alt="Image of the described place." src="" width= "100%"></div>
+      	<div class="col-sm-3 centercontainer">
+          <a class="image-link">
+            <img class="postImage posthome" alt="Image of the described place." width= "100%">
+          </a>
+        </div>
       	<div class="row">
       		<div class="container " style="display:none">
       			<div clas="col-sm-2"></div>
@@ -125,5 +130,6 @@
 </div>
 <script src="js/functions_home.js"></script>
 <script src="js/functions_save_part.js"></script>
+<script src="libs/lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>

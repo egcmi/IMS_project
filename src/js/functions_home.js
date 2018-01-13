@@ -35,6 +35,9 @@ for (var i = 0; i < jsonPosts.length; ++i) {
   $(post).find(".location").text("Where? " + jsonPosts[i].location);
   $(post).find(".date").text("When? " + date + " at " + time);
   $(post).find(".id").attr("value",jsonPosts[i].id_event);
+  $(post).find(".image-link").attr('href', jsonPosts[i].photo);
+  $(post).find(".image-link").attr('data-lightbox', postId);
+  $(post).find(".image-link").attr('data-title', jsonPosts[i].title);
 }
 
 $(".btnRead").click(function(){
