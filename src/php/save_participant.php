@@ -198,29 +198,28 @@ if(isset($_REQUEST)){
 	$phone_number=$_POST['tel'];
 	$email_address=$_POST['email'];
 	$captcha=$_POST['g-recaptcha-response'];
-        
+
     if(!$captcha){
       echo 'Please check the the captcha form.';
       exit;
     }
+
 	$secretKey = "6LfofkAUAAAAAOQPWeI1fOkT5StWsoPNy2dCuhKk";
 	$ip = $_SERVER['REMOTE_ADDR'];
     $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
 	$responseKeys = json_decode($response,true);
     if(intval($responseKeys["success"]) !== 1) {
-      echo 'You are spammer! ';
+      echo 'You are a spammer! ';
     }
-	$sql="INSERT INTO participants(id_event, name, surname, phone_number, email_address) VALUES ('$id_event', '$name', '$surname', '$phone_number' ,'$email_address');";
 
-	$result = $conn->query($sql);
+    $stmt = $conn->prepare("INSERT INTO participants (id_event, name, surname, phone_number, email_address) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param('issss', $id_event, $name, $surname, $phone_number, $email_address);
 
-	if($result > 0){
+	if($stmt->execute()){
 		echo "You have been successfully added! You should receive a mail from us in a bit. If not, please email us on uniscoutbz@gmail.com.";
 		send_email($email_address, $name, $surname, $id_event);
-	} else if($result == 0){
-		echo "This email is already registered for this event.";
-	}else{
-		echo "Something went wrong, please try again.";
+	} else {
+		echo "Your information might be incorrect. Please check and try again.";
 	}
 
 	$conn->close();
