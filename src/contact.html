@@ -93,9 +93,20 @@ require_once "recaptchalib.php";
     var myCenter = new google.maps.LatLng(46.4988629, 11.3484011);
     var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
     var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    var marker = new google.maps.Marker({position:myCenter});
-    marker.setMap(map);
+    
   }
+</script>
+<script>
+function myMap() {
+	var myCenter = new google.maps.LatLng(46.498545, 11.350881);
+	var mapProp= {
+    center:myCenter,
+    zoom:15,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter});
+
+marker.setMap(map);}
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcW1bSDHg1mddPxaYo3xca_e6R4efo6wU&callback=myMap"></script>
 <script src="js/functions_contact_email.js"></script>
