@@ -13,10 +13,18 @@ if ($conn->connect_error) {
 
 $sql = "SELECT title, photo FROM events";
 $result = $conn->query($sql);
-$rows = array();
+$rows1 = array();
 while($row = $result->fetch_assoc()) {
-    $rows[] = $row;
+    $rows1[] = $row;
 }
-print json_encode($rows);
+
+$sql = "SELECT title, photo FROM album";
+$result = $conn->query($sql);
+$rows2 = array();
+while($row = $result->fetch_assoc()) {
+    $rows2[] = $row;
+}
+
+print json_encode(array_merge($rows1, $rows2));
 $conn->close();
 ?>

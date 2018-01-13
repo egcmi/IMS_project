@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT id_event, title, description FROM articles;";
+$sql = "SELECT id_event, title, date_time, description FROM articles ORDER BY date_time ASC;";
 $result = $conn->query($sql);
 $rows = array();
 $ims = array();

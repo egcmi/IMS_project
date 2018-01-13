@@ -14,6 +14,7 @@ function getPhotos() {
   xmlhttp.send(null);
   return result;
 }
+alert(jsonPhotos);
 var jsonPhotos = JSON.parse(getPhotos());
 
 for (var i = 0; i < jsonPhotos.length; ++i) {
