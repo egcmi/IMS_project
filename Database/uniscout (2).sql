@@ -61,7 +61,9 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id_article`, `id_event`, `title`, `description`) VALUES
-(1, 1, 'A walk to explore Talvera/Talfer', 'Vivamus sed metus vel purus pulvinar cursus. Etiam quam tellus, venenatis et porta congue, finibus id arcu. Phasellus hendrerit risus urna, in semper felis semper imperdiet. Mauris id ultrices felis, quis scelerisque nulla. In semper nibh a urna viverra pretium. Nunc malesuada ullamcorper enim vitae congue. Suspendisse euismod egestas eleifend.');
+(1, 1, 'A walk to explore Talvera/Talfer', 'Nulla facilisi. Nullam ac arcu pellentesque, interdum augue ac, venenatis odio. Maecenas et pharetra mi. Quisque ac tellus porta, scelerisque nunc porttitor, sagittis turpis. Nulla sed rhoncus nibh. Phasellus rutrum mi tortor, quis aliquam nibh varius ac. Sed mattis sapien ante, posuere dignissim quam vestibulum vitae.
+
+Pellentesque et ante a nisi maximus venenatis in vel mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec scelerisque lorem enim, vitae pellentesque felis condimentum ac. Fusce quis condimentum turpis, eget congue augue. Nulla mollis quam sit amet tortor commodo, et elementum tortor blandit. Curabitur iaculis nulla quam, ac molestie sem ullamcorper ut. Maecenas odio mi, scelerisque non mauris sit amet, fermentum feugiat turpis. Ut vitae arcu id ipsum scelerisque lacinia quis quis ex. Nunc vitae ex id lorem pellentesque auctor. Donec cursus risus ligula, a aliquet velit sagittis non. Vivamus gravida elit at orci molestie, ut suscipit nibh fermentum. Vivamus sed metus vel purus pulvinar cursus. Etiam quam tellus, venenatis et porta congue, finibus id arcu. Phasellus hendrerit risus urna, in semper felis semper imperdiet. Mauris id ultrices felis, quis scelerisque nulla. In semper nibh a urna viverra pretium. Nunc malesuada ullamcorper enim vitae congue. Suspendisse euismod egestas eleifend.');
 
 -- --------------------------------------------------------
 

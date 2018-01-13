@@ -5,9 +5,9 @@ set_include_path('../libs');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require_once 'PHPMailer/src/Exception.php';
+require_once 'PHPMailer/src/PHPMailer.php';
+require_once 'PHPMailer/src/SMTP.php';
 
 $servername = "localhost";
 $username = "root";
@@ -205,10 +205,10 @@ if(isset($_REQUEST)){
     }
 	$secretKey = "6LfofkAUAAAAAOQPWeI1fOkT5StWsoPNy2dCuhKk";
 	$ip = $_SERVER['REMOTE_ADDR'];
-        $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+    $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
 	$responseKeys = json_decode($response,true);
         if(intval($responseKeys["success"]) !== 1) {
-          echo 'You are spammer ! ';
+          echo 'You are spammer !';
         }
 	$sql="INSERT INTO participants(id_event, name, surname, phone_number, email_address) VALUES ('$id_event', '$name', '$surname', '$phone_number' ,'$email_address');";
 
