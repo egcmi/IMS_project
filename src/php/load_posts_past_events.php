@@ -15,9 +15,9 @@ if ($conn->connect_error) {
 $sql = "SELECT id_event, title, date_time, description FROM articles ORDER BY date_time ASC;";
 $result = $conn->query($sql);
 $rows = array();
-$ims = array();
 $id = -1;
 while($row = $result->fetch_assoc()) {
+	$ims = array();
     $id = $row['id_event'];
     $sqlim = "SELECT photo FROM album WHERE id_event = '" . $id . "';";
     $resim = $conn->query($sqlim);

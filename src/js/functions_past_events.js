@@ -16,6 +16,7 @@ function getPosts() {
 }
 var jsonPosts = JSON.parse(getPosts());
 
+var k = 0;
 for (var i = 0; i < jsonPosts.length; ++i) {
   var date_time = jsonPosts[i].date_time;
   var time = date_time.substring(11,16);
@@ -31,12 +32,13 @@ for (var i = 0; i < jsonPosts.length; ++i) {
   $(post).find(".postDate").text("Posted on " + date + " at " + time + ".");
   $(post).find(".postContent").data("shortText", partial);
   $(post).find(".postContent").data("fullText", content);
-  for (var j = 0; j < jsonPosts[i].photo.length; ++j) {
-    var photoId = "photo" + j;
-    $("#locImages").append("<div id='" + photoId + "'></div>");
+  var current = jsonPosts[i];
+  for (var j = 0; j < current.photo.length; ++j) {
+    var photoId = "photo" + k++;
+    $(post).find(".locImages").append("<div id='" + photoId + "'></div>");
     var photo = $("#"+photoId);
     $("#postTemplate1").children().clone().appendTo(photo);
-    $(photo).find(".image").attr('src', jsonPosts[i].photo[j]);
+    $(photo).find(".image").attr('src', current.photo[j]);
   }
 }
 
