@@ -16,7 +16,11 @@ function getPosts() {
 }
 var jsonPosts = JSON.parse(getPosts());
 
+var k = 0;
 for (var i = 0; i < jsonPosts.length; ++i) {
+  var date_time = jsonPosts[i].date_time;
+  var time = date_time.substring(11,16);
+  var date = date_time.substring(8,10) + "/" + date_time.substring(5,7) + "/" + date_time.substring(0,4);
   var postId = "post" + i;
   $("#posts").append("<div id='" + postId + "'></div>");
   var post = $("#"+postId);
@@ -25,15 +29,16 @@ for (var i = 0; i < jsonPosts.length; ++i) {
   var content = jsonPosts[i].description;
   var partial = content.substring(0,250) + "...";
   $(post).find(".postContent").text(partial);
+  $(post).find(".postDate").text("Posted on " + date + " at " + time + ".");
   $(post).find(".postContent").data("shortText", partial);
   $(post).find(".postContent").data("fullText", content);
-  for (var j = 0; j < jsonPosts[i].photo.length; j++) {
-
-    var photoId = "photo" + j;
-    $("#locImages").append("<div id='" + photoId + "'></div>");
+  var current = jsonPosts[i];
+  for (var j = 0; j < current.photo.length; ++j) {
+    var photoId = "photo" + k++;
+    $(post).find(".locImages").append("<div id='" + photoId + "'></div>");
     var photo = $("#"+photoId);
     $("#postTemplate1").children().clone().appendTo(photo);
-    $(photo).find(".image").attr('src', jsonPosts[i].photo[j]);
+    $(photo).find(".image").attr('src', current.photo[j]);
   }
 }
 
