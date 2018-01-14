@@ -1,7 +1,0 @@
-C:\xampp\php\php.ini
-
-c:\xampp\sendmail\sendmail.ini
-
-
-For example comment following line if there is another sendmail_path : 
-sendmail_path="C:\xampp\mailtodisk\mailtodisk.exe" in the php.ini file
