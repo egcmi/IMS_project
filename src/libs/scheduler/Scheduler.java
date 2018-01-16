@@ -22,10 +22,10 @@ public class Scheduler {
  
         // Set time of execution. Here, we have to run every day 4:20 PM; so,
         // setting all parameters.
-        calendar.set(Calendar.HOUR, 3);
-        calendar.set(Calendar.MINUTE, 35);
+        calendar.set(Calendar.HOUR, 8);
+        calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
-        calendar.set(Calendar.AM_PM, Calendar.PM);
+        calendar.set(Calendar.AM_PM, Calendar.AM);
  
         Long currentTime = new Date().getTime();
  
@@ -42,9 +42,9 @@ public class Scheduler {
         
         // Setting stop scheduler at 4:21 PM. Over here, we are using current
         // calendar's object; so, date and AM_PM is not needed to set
-        calendar.set(Calendar.HOUR, 5);
-        calendar.set(Calendar.MINUTE, 30);
-        calendar.set(Calendar.AM_PM, Calendar.PM);
+        calendar.set(Calendar.HOUR, 8);
+        calendar.set(Calendar.MINUTE, 10);
+        calendar.set(Calendar.AM_PM, Calendar.AM);
  
         // Calculation stop scheduler
         long stopScheduler = calendar.getTime().getTime() - currentTime;

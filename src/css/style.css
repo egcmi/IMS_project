@@ -25,16 +25,34 @@ body {
    height:20px;
 }
 
+.myitem{
+  font-family: 'Helvetica', sans-serif;
+}
+
 .header{
   background-color: #99CB38;
   color: #ffffff;
 }
+
 .postTitle{
   padding-left: 1vw;
+}
+
+.fontText{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.fontTitle{
+  font-family: 'Roboto', sans-serif;
+}
+
+.postInfo{
+  padding-top: 1vh;
 }
 .posthome{
   padding:1vw;
 }
+
 .navbar .navbar-nav {
   color: black;
   font: bold 17px georgia;
@@ -89,6 +107,7 @@ body {
 }
 
 #copyright {
+  font-family: 'Roboto', sans-serif;
   background-color: #99CB38;
   color: white;
   text-align: center;

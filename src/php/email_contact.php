@@ -77,9 +77,9 @@ if(isset($_REQUEST)){
 try{
 		send_email("Message from: {$name} <{$email}>", "uniscoutbz@gmail.com", $comment, $comment);
 		send_email("Your message to UniScout", $email, $bodyhtml, $bodysimple);
-	    echo 'Thank you! We have received your message.';
+	    echo "Thank you! We have received your message.\n";
 	}catch(Exception $e){
-		echo 'Message could not be sent. Please try again.';
+		echo "Message could not be sent. Please try again.\n";
 	    //echo 'Mailer Error: ' . $mail->ErrorInfo;
 	}
 

@@ -172,9 +172,9 @@ function send_email($title, $time, $date, $description, $location, $photo, $name
 		$mail->AltBody = "Hi {$name} {$surname}! This is a reminder that {$title} is coming up tomorrow, so get prepared! We will meet tomorrow, {$nice_date}, at {$time} at the University Square in Bolzano to go to {$location}. Please be punctual so we can start on time. Here's some more info: {$description} Remember to pack some snacks and water, wear comfortable clothes with sporty shoes and dress appropriately for the weather in {$location}. You are receiving this because you expressed interest in some event at our website UniScout. We might use the email address and/or phone number that you provided us to get in touch with you prior to the event. If you have any questions, feel free to contact us via our contact form or by replying to this email. Cheers! Your UniScout Team";
 
 		$mail->send();
-		echo 'Message has been sent';
+		echo "Message has been sent.\n";
 	} catch (Exception $e) {
-		echo 'Message could not be sent.';
+		echo "Message could not be sent.\n";
 	    //echo 'Mailer Error: ' . $mail->ErrorInfo;
 	}
 }

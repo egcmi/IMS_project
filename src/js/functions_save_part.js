@@ -5,7 +5,7 @@ $(".formUser").submit(function(){
         method: "POST",
         url: "php/save_participant.php",
         success: function(data){
-            alert("User insertion process: " + data);
+            alert("" + data);
             $(".formUser")[0].reset();
             grecaptcha.reset(); 
         }
