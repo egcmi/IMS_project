@@ -24,14 +24,22 @@
 	\noindent For this project we have tried to work as a group as much as possible. We managed to work singularly and together and all the choices reflect the group decisions.
 	
 	\section{User Stories}
-	
-	A new student of the Free University of Bolzano arrives in the city. He does not have any friends, and neither has been in South Tyrol before. However, he wants to discover the beauty of the villages and the environment in which he will live for some years. He does not want to visit alone and does not have any information regarding what to see and how to get there.
-
+	\subsection{The new student}
+	A new student of the Free University of Bolzano arrives in the city. He does not have any friends, and neither has been in South Tirol before. However, he wants to discover the beauty of the villages and the environment in which he will live for some years.He does not want to visit alone and does not have any information regarding what to see and how to get there. \\
+	\subsection{The existing student }
+	A student of Free University of Bolzano that wants to travel around South Tyrol.He does not want to travel alone, does not want to have all the stress and put in all the effort for the organization of every event.\\ 
+	\subsection{Not a student of Free University of Bolzano}
+	Someone that is not a student of Free University of Bolzano but is interested in the event published on the website can participate also. The best example in this case would be a friend or relative of a student that comes in South Tirol to visit the student.\\
 	
 	\section{Implementation and Technologies}	
 	In the implementation of this website the technologies that we use are : Bootstrap, HTML5, CSS, JavaScript, AJAX, JQuery, PHP, MySQL.\\
-	We used also some external libraries like:
-Lightbox, PHPMailer, Mail Scheduler (by Chintan Patel).
+	We used also some external libraries like:Lightbox, PHPMailer, Mail Scheduler (by Chintan Patel). \\
+	\subsection{Front end}
+	We choose to use Bootstrap in development of the front of our website since we wanted it to be the most responsive in different screen sizes. We found Bootstrap to be very useful mostly of its grid system. We found useful also some other features of Bootstrap like pre-defined classes with a certain style, or other elements that we used like the collapsing navbar menu in the mobile version.\\
+	Lightbox was another choice of ours for the front end. We made this choice since we have a lot of photos which make the event more clear to the user, and we thought that having the possibility to view the photos on a larger version would be a nice-to-have feature. It is used on the home page,so on the oncoming events and also on the gallery where all the photos of the past and oncoming event are shown.\\
+	\subsection{Back end}
+	Our choice of the back end technology was made accordingly to our previous experience with these tools during the course. The main functions that use the back end, need almost all the technologies that we use. For example, the event loading uses AJAX, so JavaScript invoking a PHP file executes a query on the database and after this request the returned result gets processed using JQuery. \\ 
+	The external libraries of the back end,PHPMailer and Mail Scheduler,are used for sending emails to the users when they get enrolled to an event and to schedule an email that is send the day before the event in order to remind the participants.\\
 
 	\section{Development Process}
 
