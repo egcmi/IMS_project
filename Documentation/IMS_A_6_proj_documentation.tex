@@ -18,7 +18,7 @@
 \usepackage{hyperref}
 \usepackage[all]{hypcap}
 
-\title{IMS - Project Documentation - UniScout Website}
+\title{IMS - Project Documentation\\UniScout Website}
 \author{A6 - Giulia Baldini, Emanuela Calabi, Mikel Grabocka}
 
 \begin{document}
@@ -41,18 +41,31 @@
 	
 	\section{Implementation and Technologies}
 	For the implementation of the UniScout website we used several technologies. In addition to the standard HTML5 and CSS we used Bootstrap for the front-end. JavaScript, AJAX, JQuery, PHP, MySQL were our choices for the back-end.\\
-	Moreover, we used the following external libraries: Lightbox (for enlarging pictures on mouse click and navigating through them), PHPMailer (to send confirmation emails to the people who sign themselves up for events and to send reminder emails to the participants on the day before the event), Mail Scheduler by \href{https://chynten.wordpress.com/2016/06/03/java-scheduler-to-run-every-day-on-specific-time/}{Chintan Patel} (to schedule automatic dispatch of reminder emails at a specific time).
+	Moreover, we used the following external libraries:
+	\begin{itemize}
+		\item \textbf{Lightbox:} for enlarging pictures on mouse click in and navigating through them in the Home page and Past Events page;
+		\item \textbf{PHPMailer:} to send confirmation emails to the people who sign themselves up for events in the Home page and to send reminder emails to the participants on the day before the event they are signed up for;
+		\item \textbf{Mail Scheduler by \href{https://chynten.wordpress.com/2016/06/03/java-scheduler-to-run-every-day-on-specific-time/}{Chintan Patel}:} to schedule automatic dispatch of reminder emails every day at a specific time.
+	\end{itemize}
 	
 	\subsection{Front-end}
-	We choose to use Bootstrap in development of the front of our website since we wanted it to be the most responsive possible in different screen sizes. We found Bootstrap to be very useful mostly for its grid system. We also found useful some other features of Bootstrap like pre-defined classes with a certain style, or other elements that we used like the collapsing navbar menu in the mobile version.\\
-	Lightbox was another choice of ours for the front end. We made this choice since we have a lot of photos which can make the event clearer to the user, and we thought that having the possibility to view the photos on a larger version would be a nice-to-have feature. It is used on the home page and on the gallery, where the photos of both upcoming and past events are shown.
+	Our goal for the front-end was to make our website as responsive as possible, so that it would display properly both on desktop and on mobile. For this reason we included Bootstrap in its development. As a result, it adjusts to all screen sizes and, thus, to  different devices. One of the Bootstrap features we found to be the most useful was its grid system. In addition to this, Bootstrap's classes, with pre-defined style, and the collapsing navigation bar menu for the mobile version were also a choice.\\
+	We also decided to use the Lightbox library. This choice was due to the fact that our website contains several pictures to attract the users. In this context, having the possibility to enlarge the pictures to full screen is not mandatory, but definitely nice to have so that the user can visualise what the event is about. The forementioned library was used in the Home and Gallery paged, where the photos of both upcoming and past events are shown.
+	
 	\subsection{Back-end}
-	Our choice of the back-end technology was made accordingly to our previous experience with these tools during the course. The main functions that use the back end, need almost all the technologies that we use. \\
-	More in detail, in the event loading procedure, we use AJAX to call a PHP file (Figure~\ref{fig:AJAX}), then in the PHP file we execute a query and we return a JSON-format result (Figure~\ref{fig:PHP}). Afterwards, this result is collected with JavaScript and processed with JQuery (Figure~\ref{fig:JQuery}). \\
-	As you can see we create a div for each post, and we insert it into the posts div in home.html. The template for each post is retrieved from the home.html file, and we modify it in this part. For example, we set the title of the post and the id of the post. The latter one is saved in a hidden field of our form, because we will need it to match the participant with the event in the saving process.\\
-	Another thing we do it create two new attributes: shortText and fullText. Short text is a percentage of the full text (at the moment 250 character).\\
-	This is used then when clicking the Show more/Hide button to switch easily between the two as it can be seen in Figure~\ref{fig:butt}. We have a container inside the post that contains the form that the user has to fill in order to participate. This form is showed only when pressing the button Show more.\\\\
-	The external libraries of the back end, PHPMailer and Mail Scheduler, are used for sending emails to the users when they get enrolled to an event and to schedule an email that is sent the day before the event as a reminder for the participants.
+	Our choice of the back-end technology was made accordingly to the tools we learned during the course Internet and Mobile Services. The core functionalities of the back end implement all the technologies we mentioned above.\\
+	More in detail, the procedure for loading events in the Home page works as follows:
+	\begin{enumerate}
+		\item First, we use AJAX to call a PHP file (Figure~\ref{fig:AJAX});
+		\item Secondly, in the PHP file we execute a query and we return a JSON-format result (Figure~\ref{fig:PHP});
+		\item Thirdly this result is collected with JavaScript and processed with JQuery (Figure~\ref{fig:JQuery}).
+	\end{enumerate} 
+	As you can see we create a div element for each post, then we insert it into the div element with id="posts" in the home.html file. The template for each post is retrieved from the home.html file, and we modify it in this part.\\
+	To save a new participant for an event in our database, we retrieve the the post id. In fact we set the template to contain the post title and id. The latter one is saved as an hidden field in the form. We need to do so, as we will need it to match the participant id with the event id when querying the database in the saving process.\\
+	We also created two attributes for each post, namely shortText and fullText. Short text is a reduced version of the full text, the first 250 characters at the moment, so that long posts do not take up too much space and the user does not need to scroll down excessively.\\
+	Upon clicking the "Show more" button at the bottom of the post, the shortText is switched in favour of the fullText and the user can read the full event description. The button is switched to display the "Hide" command which reverses the action of the former, as you can read in Figure~\ref{fig:butt}. We have another div element called container, inside the post, which contains the form that the user must fill in order to participate. As above, this form is showed only when pressing the button "Show more".\\\\
+	The external libraries for the back end, namely PHPMailer and the Mail Scheduler, are used for sending emails to the users when they register for an event and to schedule an email that is sent the day before the event as a reminder for the participants.
+	
 	\begin{figure}
 		\centering
 		\begin{BVerbatim}
