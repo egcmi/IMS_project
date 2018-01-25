@@ -17,6 +17,7 @@
 \usepackage{fancyvrb}
 \usepackage{hyperref}
 \usepackage[all]{hypcap}
+\usepackage{float}
 
 \title{IMS - Project Documentation\\UniScout Website}
 \author{A6 - Giulia Baldini, Emanuela Calabi, Mikel Grabocka}
@@ -66,7 +67,7 @@
 	Upon clicking the "Read more" button at the bottom of the post, the shortText is switched in favour of the fullText and the user can read the full event description. The button is switched to display the "Hide" command which reverses the action of the former, as you can read in Figure~\ref{fig:butt}. We have another div element called container, inside the post, which contains the form that the user must fill in order to participate. As above, this form is showed only when pressing the button "Read more".\\\\
 	The external libraries for the back end, namely PHPMailer and the Mail Scheduler, are used for sending emails to the users when they register for an event and to schedule an email that is sent the day before the event as a reminder for the participants.
 	
-	\begin{figure}
+	\begin{figure}[H]
 		\centering
 		\begin{BVerbatim}
 		function getPosts() {
@@ -89,7 +90,8 @@
 		\caption{AJAX call}
 		\label{fig:AJAX}
 	\end{figure}
-	\begin{figure}
+	
+	\begin{figure}[H]
 		\centering
 		\begin{BVerbatim}
 		$sql = "SELECT id_event, title, date_time, location, description, 
@@ -107,7 +109,7 @@
 		\label{fig:PHP}
 	\end{figure}
 
-	\begin{figure}
+	\begin{figure}[H]
 		\centering
 		\begin{BVerbatim}
 		var jsonPosts = JSON.parse(getPosts());
@@ -134,7 +136,8 @@
 		\caption{JQuery processing}
 		\label{fig:JQuery}
 	\end{figure}
-	\begin{figure}
+	
+	\begin{figure}[H]
 	\centering
 	\begin{BVerbatim}
 	$(".btnRead").click(function(){
@@ -162,48 +165,51 @@
 	The creation of the database was a long process: we first added the tables that we knew we needed for sure. However, it required several changes to reflect the changes in our website. The final database is composed of four tables: events, participants, articles and album.\\
 	The events table contains all the information about an event: id, title, date and time, location, description and a link to a photo describing the place.\\
 	The articles table is where the posts written about past events are saved. We imagine that in our association the admins will need to write a nice comment and add some pictures about the event that has just passed; so that they can show to possible future participants how an event works and why they should join. The articles table has the following fields: id, title, id\_event (id of the event to which it corresponds), date and time of its publication and description.\\
-	The participants table holds information about the people who decided to join us on a certain event. It has contact information about the user (name, surname, phone number and email), an id and the id of the event it references.\\
-	The album table was the lastly added, since we figured we needed another place to store all the images that were going to be in the gallery. Each image in album has its own id, the id of the event to which it refers, a title and the link to the photo.
+	The participants table holds information about the people who decided to join us on a certain event. It has contact information about the user (name, surname, phone number and email), an id and the id of the event it refers.\\
+	The album table was the added at last, since we needed more room to store all the images that were going to be in the gallery. Each image in album has its own id, the id of the event it refers, a title and link to the photo.
 	
 	\subsection{PHP and MySQL}
-	After our first database was ready, we created straight away a connection to PHP. We started querying the posts to retrieve information about the events.
+	After the first version of the database was ready, we immediately created a connection to PHP. We started querying the posts in order to retrieve information about the events.
 	
 	\subsection{Wireframes}
-	To understand the functionalities and the features we wanted our website to have, we tried to sketch some wireframes of our final product. We agreed on a modern design, with many large images to attract users with the beauties of this region. 
+	To understand the functionalities and the features we wanted our website to have, we tried to sketch some wireframes of our final product. We agreed on a modern design, with large images to attract users with the beauty of South Tyrol. 
 	
 	\subsection{First Steps towards the Front-End}
-	We started creating the home page. The first step was obviously to create the layout of the page and then the template for the posts. Then, the layout for about and contact were created.\\
-	Next, we created our logo (original from \href{https://goo.gl/yTRScL}{Dolomiti del Brenta Trail}) and chose the main colours for the website.
+	We started creating the Home page. The first step was obviously creating the layout of the page and then the template for the posts. Secondly, the layout for About and Contact pages were created.\\
+	Lastly, we created our logo (original from \href{https://goo.gl/yTRScL}{Dolomiti del Brenta Trail}) and chose the main colours for the website.
 	
 	\subsection{Connection Front-End - Back-End}
-	Since at this point in time we already had the front-end, we started thinking about the interaction with the database. We already had some PHP files ready for that, and the first approach was to create the posts server-side.\\
-	Despite the fact that it was working, we thought it was a bit too much effort for the server, and that it would have been a better idea to have it client side. So, we created what we have now: whenever a page has some posts, we have a hidden <div> in that page containing our template, this template is then cloned and changed according to the event through an AJAX call to a PHP file and JQuery, as explained above.\\
-	Reaching this point, we had our last viable product. The website was completely responsive, but it was only a static website showing information, and no interactions were allowed.
+	At this point in time the front-end was finished. Therefore, we started thinking about the interaction with the database. We already had some PHP files ready for that, and the first approach was to create the posts server-side.\\
+	Despite the fact that it was working, we thought it would be a bit too much effort for the server, and that it would have been a better idea to have it client-side. The result is what we have now: whenever a page has some posts (Home and Past Events), we have a hidden <div> on the page, which contains our template. This template is then cloned and changed according to the event information through an AJAX call to a PHP file and JQuery, as explained above.\\
+	After all of this, we had our last viable product. The website was completely responsive, but it was only a static website showing information, and no interactions were allowed.
 
 	\subsection{The New Features}
 	\subparagraph{Gallery}
-	We started thinking that, since our website is a lot based on photos, having a gallery page with all the photos would have been a good idea. So we initially put the photos with their caption on that page. Afterwards, we noticed that there were problems with the layout of the page. As a solution we found this layout done mainly in CSS that, depending on the width of the screen changes how many columns of images are visible.\\
-	The page was ready, but for a not-mobile version the images were too small. So we used the library Lightbox to have clickable images.
+	Since our website is very much image-based, a gallery page gathering all the photos would be a good idea. Initially added the images, along with the caption, on that page. Afterwards, we started noticing problems with the page layout. As a solution we added a CSS-based layout which changes how many columns of images are visible depending on the width of the screen.\\
+	The page was ready, but we were concerned about the small size of the pictures in the desktop version. Therefore, we used the Lightbox library to have click-to-expand images.
+	
 	\subparagraph{Emails}
-	As a website for an association organizing trips, the need of sending email to our participant is quite realistic. We used the PHPMailer library to set up and prepare the HTML for our mails. So, whenever someone subscribes to an event, he receives an email containing all the necessary information for that trip.
+	As a website for an association organizing trips, the need of sending email to our participants is quite realistic. We used the PHPMailer library to set up and prepare the HTML for our mails. Thanks to this, whenever someone signs up for an event, he/she will receive a confirmation message containing all the necessary information for that trip.
+	
 	\subparagraph{The Captcha}
-	Since we had the possibility to send emails to our address, we agreed that a spam control mechanism was needed. We used the Google API to install it on our system.
+	Since we had the possibility to send emails to our address, we agreed that a spam control mechanism was needed. We used reCaptcha and the Google API to incorporate it on our system.
+	
 	\subparagraph{The Scheduler}
-	Another nice-to-have features is that users receive continuous emails: a week before the trip, a day before the trip, and maybe also a newsletter containing all the upcoming trips. In this version of our website, we implemented the day-before email. Although, even if we wanted to implement the other two, the process will be basically the same.\\
-	Our problem is that we needed to use a cross-platform scheduler for that. Unfortunately, two of us are using Windows and one is using Linux, so there was no way to achieve that as far as we found out. The idea was then to have a scheduler in Java. This works pretty well, as long as the file is running.
+	Another nice-to-have feature is that users receive emails from us: a week before the trip, a day before the trip, and perhaps a newsletter informing the user avout upcoming trips. In this version of our website, we implemented a reminder email on the day before the event. However, the process would be exactly the same, if we wanted to implement the other two.\\
+	Our problem with the scheduler is that we needed it to be cross-platform scheduler. This problem arised within the team due to the fact that two of us are working on a Windows machine, while the third is using Linux. For all we found out, there was no way to achieve this. The idea was then to have a Java scheduler. This solution worked for us, as long as the file keeps running. However, we are aware that  this problem would not arise in a real-life scenario, as a server runs uniquely on one machine.
 	
 	\section{Testing}
-	The main focus feature that we tested the most was the responsive design, since we wanted our website to be responsive in any environment. After having tested all the methods of the back-end and we were sure that they would respond with the result that we wanted to, we focused on the responsive front-end. After a lot of testing, we can say that we achieved our goal since our website is responsive to any size of screen and it works on all the main web browsers such as: Google Chrome, Mozilla Firefox, Safari, Microsoft Edge and even on Internet Explorer.\\
-	To add value to our final product, we decided to do some user-testing. In this way, we managed to collect feedback from our colleagues on the most important features, and to refine some others according to their preferences.\\
-	After those feedbacks, we run more rounds of testing, which resulted into a stable website that is not affected by common errors, such as SQL Injection. In fact, we worked towards the goal to make it more secure.\\
+	The main focus of our testing was the responsiveness of the design, because we wanted our website to be usable and look nice in any environment. Therefore, we tested all the functions of the back-end first and made sure they would yield the correct result. Then we focused on the front-end. After intense testing, we can say that we achieved our goal. In fact our website works well with any screen size and on all the main web browsers such as Google Chrome, Mozilla Firefox, Safari, Microsoft Edge and even on Internet Explorer.\\
+	To add value to the final product, we did some user-testing. Thus, we collected feedback from our colleagues on the most significant features and to refined them according to their preferences.\\
+	After some adjustments, we did more rounds of testing. The result is a stable website, not affected by common issues, such as SQL Injection. In fact, we took a few step towards the goal of making it more secure.\\
 	
 	\section{Future Work}
-	Our work could be improved by adding:
+	Our work could be improved by adding the following features:
 	\begin{itemize}
-		\item \textbf{Calendar}: a page with just a calendar that points out when our next events are.
-		\item \textbf{Grouping method by tags or cities}: this could be done in the home page or in another page. The idea would be that, when the posts are posted then the user can choose a city/tag from the given ones and only those ones will be shown.
-		\item \textbf{One page per event}: having more space for each post might be more useful, and in that way we could also add more information.
-		\item \textbf{Search function}: we imagine that, having many events, it might be useful to be able to look for the events.
+		\item \textbf{Calendar}: a page with a simple calendar view, to better visualise when the next events are.
+		\item \textbf{Grouping posts by tags or location}: this could be applied to the home page. The idea is be that the user can choose a tag/location from the given ones and only read those post containing such tag or that take place in such location.
+		\item \textbf{A page for each event}: when clicking on a post in the Home or Past Events page, the user lands on a page specific for such event. This way, we could have longer pages with more information.
+		\item \textbf{Search function}: because we organise many events, it would be easier for the user to be able to search for a specific event.
 	\end{itemize}
 	
 \end{document}
