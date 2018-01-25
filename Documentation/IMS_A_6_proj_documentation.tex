@@ -37,9 +37,9 @@
 	We also used some external libraries like: Lightbox, PHPMailer, Mail Scheduler (by Chintan Patel).
 	\subsection{Front-end}
 	We choose to use Bootstrap in development of the front of our website since we wanted it to be the most responsive possible in different screen sizes. We found Bootstrap to be very useful mostly for its grid system. We also found useful some other features of Bootstrap like pre-defined classes with a certain style, or other elements that we used like the collapsing navbar menu in the mobile version.\\
-	Lightbox was another choice of ours for the front end. We made this choice since we have a lot of photos which can make the event clearer to the user, and we thought that having the possibility to view the photos on a larger version would be a nice-to-have feature. It is used on the home page, so on the upcoming events and also on the gallery where all the photos of the past and oncoming event are shown.\\
+	Lightbox was another choice of ours for the front end. We made this choice since we have a lot of photos which can make the event clearer to the user, and we thought that having the possibility to view the photos on a larger version would be a nice-to-have feature. It is used on the home page and on the gallery, where the photos of both upcoming and past events are shown.\\
 	\subsection{Back-end}
-	Our choice of the back-end technology was made accordingly to our previous experience with these tools during the course. The main functions that use the back end, need almost all the technologies that we use. For example, the event loading procedure uses AJAX, so JavaScript invokes a PHP file, that then executes a query on the database, that is consequently returned as a JSON file which gets processed using JQuery. \\ 
+	Our choice of the back-end technology was made accordingly to our previous experience with these tools during the course. The main functions that use the back end, need almost all the technologies that we use. For example, the event loading procedure uses AJAX, so JavaScript invokes a PHP file, that then executes a query on the database, that is consequently returned as a JSON file which gets processed using JQuery.\\
 	The external libraries of the back end, PHPMailer and Mail Scheduler, are used for sending emails to the users when they get enrolled to an event and to schedule an email that is sent the day before the event as a reminder for the participants.
 
 	\section{Development Process}
@@ -63,11 +63,34 @@
 	Next, we created our logo (from https://goo.gl/yTRScL) and chose the main colours for the website.
 	
 	\subsection{Connection Front-End - Back-End}
-	Since at this point in time we already had the front-end, we started thinking about the interaction with the database. 
+	Since at this point in time we already had the front-end, we started thinking about the interaction with the database. We already had some PHP files ready for that, and the first approach was to create the posts server-side.\\
+	Despite the fact that it was working, we thought it was a bit too much effort for the server, and that it would have been a better idea to have it client side. So, we created what we have now: whenever a page has some posts, we have a hidden <div> in that page containing our template, this template is then cloned and changed according to the event through an AJAX call to a PHP file and JQuery, as explained above.\\
+	Reaching this point, we had our last viable product. The website was completely responsive, but it was only a static website showing information, and no interactions were allowed.
+
+	\subsection{The New Features}
+	\subparagraph{Gallery}
+	We started thinking that, since our website is a lot based on photos, having a gallery page with all the photos would have been a good idea. So we initially put the photos with their caption on that page. Afterwards, we noticed that there were problems with the layout of the page. As a solution we found this layout done mainly in CSS that, depending on the width of the screen changes how many columns of images are visible.\\
+	The page was ready, but for a not-mobile version the images were too small. So we used the library Lightbox to have clickable images.
+	\subparagraph{Emails}
+	As a website for an association organizing trips, the need of sending email to our participant is quite realistic. We used the PHPMailer library to set up and prepare the HTML for our mails. So, whenever someone subscribes to an event, he receives an email containing all the necessary information for that trip.
+	\subparagraph{The Captcha}
+	Since we had the possibility to send emails to our address, we agreed that a spam control mechanism was needed. We used the Google API to install it on our system.
+	\subparagraph{The Scheduler}
+	Another nice-to-have features is that users receive continuous emails: a week before the trip, a day before the trip, and maybe also a newsletter containing all the upcoming trips. In this version of our website, we implemented the day-before email. Although, even if we wanted to implement the other two, the process will be basically the same.\\
+	Our problem is that we needed to use a cross-platform scheduler for that. Unfortunately, two of us are using Windows and one is using Linux, so there was no way to achieve that as far as we found out. The idea was then to have a scheduler in Java. This works pretty well, as long as the file is running.
 	
 	\section{Testing}
 	The main focus feature that we tested the most was the responsive design, since we wanted our website to be responsive in any environment. After having tested all the methods of the back-end and we were sure that they would respond with the result that we wanted to, we focused on the responsive front-end. After a lot of testing, we can say that we achieved our goal since our website is responsive to any size of screen and it works on all the main web browsers such as: Google Chrome, Mozilla Firefox, Safari, Microsoft Edge and even on Internet Explorer.\\
 	To add value to our final product, we decided to do some user-testing. In this way, we managed to collect feedback from our colleagues on the most important features, and to refine some others according to their preferences.\\
 	After those feedbacks, we run more rounds of testing, which resulted into a stable website that is not affected by common errors, such as SQL Injection. In fact, we worked towards the goal to make it more secure.\\
+	
+	\section{Future Work}
+	Our work could be improved by adding:
+	\begin{itemize}
+		\item \textbf{Calendar}: a page with just a calendar that points out when our next events are.
+		\item \textbf{Grouping method by tags or cities}: this could be done in the home page or in another page. The idea would be that, when the posts are posted then the user can choose a city/tag from the given ones and only those ones will be shown.
+		\item \textbf{One page per event}: having more space for each post might be more useful, and in that way we could also add more information.
+		\item \textbf{Search function}: we imagine that, having many events, it might be useful to be able to look for the events.
+	\end{itemize}
 	
 \end{document}
